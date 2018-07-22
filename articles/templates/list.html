@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Created_at</th>
+      <th scope="col">updated_at</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr>
+      <th scope="row">{{ article.pk }}</th>
+      <td><a href="/post/{{ article.pk }}/">{{ article.title }}</a></td>
+      <td>{{ article.created_at }}</td>
+      <td>{{ article.updatedr_at }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
